@@ -56,7 +56,7 @@ app.put("/application/:id", async (request, response) => {
         const { id } = request.params;
         const application = await Application.findByIdAndUpdate(id, request.body);
         //aplication notn ofund
-        if (!product) {
+        if (!application) {
             return response.status(404).json({ message: `Application of id ${id} not found` });
         }
         const updatedApplication = await Application.findById(id);
